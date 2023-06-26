@@ -1,19 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body{
-    font-family: Montserrat;
-    
-}
-
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
     
-}
-h1{
-    color: red;
-    text-align: center;
+
 }
 
+nav{
+    background-color: #1D2635;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+    margin:  0 8px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 7px 13px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover,nav ul li a.active{
+    background-color: #536471;
+}
+
+nav div{
+    color:white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#click{
+    display: none;
+}
+.label-btn{
+    color: white;
+    font-size: 22px;
+    display: none;
+
+}
+
+/* responsive work start */
+@media only screen and (max-width:920px) {
+
+
+
+    .label-btn{
+        display: block;
+    }
+    #click:checked ~ul{
+        left: 0%;
+    }
+
+    #click:checked ~.label-btn i::before{
+        content: "\f00d";
+    }
+
+    nav ul{
+        position: fixed;
+        background-color:#1D2635;
+        top: 79px;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+        transition:  all 0.5s ease;
+
+       
+        
+    }
+    nav ul li{
+        margin: 40px 0;
+    }
+
+    nav ul li a:hover,nav ul li a.active{
+        background: none;
+        color:brown;
+        font-size: 32px;
+    }
+    
+}
+
+.hero-area{
+    background-image: url("images/banner.jpg");
+    background-repeat: no-repeat;
+    height: 86vh;
+    background-size: cover;
+    background-position: center;
+   
+}
